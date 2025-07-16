@@ -1,0 +1,30 @@
+{
+  "version": "5",
+  "specifiers": {
+    "npm:unzipit@*": "1.4.3"
+  },
+  "npm": {
+    "unzipit@1.4.3": {
+      "integrity": "sha512-gsq2PdJIWWGhx5kcdWStvNWit9FVdTewm4SEG7gFskWs+XCVaULt9+BwuoBtJiRE8eo3L1IPAOrbByNLtLtIlg==",
+      "dependencies": [
+        "uzip-module"
+      ]
+    },
+    "uzip-module@1.0.3": {
+      "integrity": "sha512-AMqwWZaknLM77G+VPYNZLEruMGWGzyigPK3/Whg99B3S6vGHuqsyl5ZrOv1UUF3paGK1U6PM0cnayioaryg/fA=="
+    }
+  },
+  "redirects": {
+    "https://esm.sh/encoding-japanese": "https://esm.sh/encoding-japanese@2.2.0"
+  },
+  "remote": {
+    "https://esm.sh/encoding-japanese@2.2.0": "8d38599dfe7c4beef1d9c06ebc6662ea7c52aa349af4c4ab21eac5a9f417b915",
+    "https://esm.sh/encoding-japanese@2.2.0/denonext/encoding-japanese.mjs": "b5b53e518c55e038e2d7bf6125e2ef1c55e9dcc1210472e1b4e317dd0d0f69a3"
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@std/assert@1",
+      "npm:unzipit@*"
+    ]
+  }
+}
