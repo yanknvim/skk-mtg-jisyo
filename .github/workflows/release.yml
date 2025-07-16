@@ -1,0 +1,38 @@
+name: Release
+
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+      - name: Install Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      - name: Build
+        run: "deno task build"
+
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+          with:
+            tag_name: ${{ steps.date.outputs.date }}
+            name: "SKK MTG Dictionary - ${{ steps.date.outputs.date }}"
+            body: "Updated dictionary for ${{ steps.date.outputs.date }}"
+            files: SKK-MTG-JISYO.utf8
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
