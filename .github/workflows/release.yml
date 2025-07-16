@@ -29,10 +29,10 @@ jobs:
 
       - name: Release
         uses: softprops/action-gh-release@v2
-          with:
-            tag_name: ${{ steps.date.outputs.date }}
-            name: "SKK MTG Dictionary - ${{ steps.date.outputs.date }}"
-            body: "Updated dictionary for ${{ steps.date.outputs.date }}"
-            files: SKK-MTG-JISYO.utf8
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.date.outputs.date }}
+          name: "SKK MTG Dictionary - ${{ steps.date.outputs.date }}"
+          body: "Updated dictionary for ${{ steps.date.outputs.date }}"
+          files: SKK-MTG-JISYO.utf8
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
